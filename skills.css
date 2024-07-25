@@ -1,0 +1,170 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topnav-right {
+    float: right;
+}
+
+
+header h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    animation: fadeInDown 1s;
+}
+
+
+#skills {
+    margin-top: 40px;
+}
+
+#skills h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #4CAF50;
+    animation: fadeInUp 1s;
+}
+
+.skill {
+    margin: 20px 0;
+    animation: fadeIn 1s;
+}
+
+.skill h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.skill-bar {
+    background: #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative;
+}
+
+.skill-bar:hover {
+    transform: scale(1.02);
+    background-color: #f0f0f0;
+}
+
+.skill-level {
+    height: 30px;
+    line-height: 30px;
+    background: #4CAF50;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    width: 0;
+    animation: loadSkill 2s forwards;
+}
+
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes loadSkill {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--skill-width);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .skill-bar {
+        height: 20px;
+    }
+
+    .skill-level {
+        height: 20px;
+        line-height: 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    #skills h2 {
+        font-size: 1.5em;
+    }
+
+    .skill h3 {
+        font-size: 1em;
+    }
+}
